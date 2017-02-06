@@ -2,8 +2,8 @@ package org.nodexy.mynagram
 
 import java.util.logging.Logger
 
-public class WordListFileImpl extends LinkedList<String> implements WordList {
-    private static Logger log = Logger.anonymousLogger;
+class WordListFileImpl extends LinkedList<String> implements WordList {
+    private static Logger log = Logger.anonymousLogger
     WordListFileImpl() {
         Properties properties = new Properties()
         try {

@@ -7,16 +7,16 @@ import org.junit.Test
  */
 class MathUtilsTest {
     @Test
-    def void test() {
+    void test() {
         Integer x = 63
         x.times {println "$it! = ${MathUtils.factorial(it)}"}
     }
     @Test
-    def void testP() {
-        println MathUtils.p(4,2)
+    void testP() {
+        5.times {n->0.upto(n, {r->println "p($n,$r) = ${MathUtils.p(n,r)}"})}
     }
     @Test
-    def void testC() {
-        println MathUtils.c(4,2)
+    void testC() {
+        5.times {n->0.upto(n, {r->println "c($n,$r) = ${MathUtils.c(n,r)}"})}
     }
 }
