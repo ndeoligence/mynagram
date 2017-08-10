@@ -4,6 +4,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * Created by phoenix on 2/4/17.
@@ -24,18 +25,23 @@ public class AnagrammerTest {
     @Test
     public void testListWords() {
         String chars = "asdf";
-        List<String> words = anagrammer.listWords(chars);
+        List<String> words = anagrammer.listWords(chars, 3);
         putList(words);
     }
     @Test
     public void testListWordsMinMax() {
         String chars = "asdfjkl";
-        List<String> words = anagrammer.listWords(chars,4,5);
+        List<String> words = anagrammer.listWords(chars,4);
         putList(words);
     }
     private static void putList(List<String> words) {
-        System.out.print("[ ");
-        words.forEach(s->System.out.print(s+" "));
-        System.out.print("]");
+        StringJoiner sj = new StringJoiner("\n");
+        words.forEach(sj::add);
+        System.out.println(sj.toString());
+    }
+    @Test
+    public void testPermute() {
+        String chars = "lpcear";
+        putList(anagrammer.listWords(chars, 3));
     }
 }

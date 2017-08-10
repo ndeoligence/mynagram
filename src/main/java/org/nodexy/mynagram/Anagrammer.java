@@ -8,6 +8,8 @@ import java.util.List;
 public interface Anagrammer {
     List<String> listWords(String chars);
     List<String> listWords(char[] chars);
+    List<String> listWords(String chars, int min);
+    List<String> listWords(char[] chars, int min);
     List<String> listWords(String chars, int min, int max);
     List<String> listWords(char[] chars, int min, int max);
 }

@@ -8,8 +8,8 @@ import org.junit.Test
 class MathUtilsTest {
     @Test
     void test() {
-        Integer x = 63
-        x.times {println "$it! = ${MathUtils.factorial(it)}"}
+        def objs = ['A', 'B', 'C'] as Object[]
+        println "permute($objs):\n${MathUtils.permute(objs)}"
     }
     @Test
     void testP() {
