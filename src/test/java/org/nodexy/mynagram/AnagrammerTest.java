@@ -3,8 +3,8 @@ package org.nodexy.mynagram;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.List;
-import java.util.StringJoiner;
+import javax.swing.*;
+import java.util.*;
 
 /**
  * Created by phoenix on 2/4/17.
@@ -34,14 +34,38 @@ public class AnagrammerTest {
         List<String> words = anagrammer.listWords(chars,4);
         putList(words);
     }
-    private static void putList(List<String> words) {
+    private static String listItems(List<String> words) {
         StringJoiner sj = new StringJoiner("\n");
         words.forEach(sj::add);
-        System.out.println(sj.toString());
+        return sj.toString();
+    }
+    private static void putList(List<String> words) {
+        System.out.println(listItems(words));
+    }
+    private static List<String> lexiSort(List<String> words) {
+        words.sort((x, y) -> x.length() < y.length()? -1 : x.length() > y.length()? 1 : x.compareTo(y));
+        return words;
     }
     @Test
     public void testPermute() {
         String chars = "lpcear";
         putList(anagrammer.listWords(chars, 3));
+    }
+    @Test
+    public void testa() {
+        String str;
+        while (true) {
+            str = JOptionPane.showInputDialog(null, "Enter characters:", "Anagram", JOptionPane.PLAIN_MESSAGE);
+            if (str == null || str.length() == 0) {
+                break;
+            }
+//            putList(anagrammer.listWords(str, 3));
+            String items = listItems(lexiSort(anagrammer.listWords(str,3)));
+            System.out.println("== == == ==START== == == ==");
+            System.out.println(items);
+            System.out.println("== == == == END == == == ==");
+            JOptionPane.showMessageDialog(null, items);
+        }
+        System.out.println("** ** ** ** Wubba lubba dub dub! ** ** ** **");
     }
 }
