@@ -11,7 +11,6 @@ fun main(args: Array<String>) {
         if (str == null || str.isEmpty()) {
             break
         }
-        //            putList(anagrammer.listWords(str, 3));
         val items = listItems(lexiSort(anagrammer.listWords(str, 3)))
         println("== == == ==START== == == ==")
         println(items)

@@ -30,6 +30,7 @@ class WordListFileImpl extends LinkedList<String> implements WordList {
                 filename = config.getString("wordlist.file.path")
             }
             loadWords(filename)
+            // this.eachWithIndex {x,i-> println("${i+1}) $x")}
         } catch (ConfigurationException e) {
             log.error('Error loading properties file!', e)
             throw e
