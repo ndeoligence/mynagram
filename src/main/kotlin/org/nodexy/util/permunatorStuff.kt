@@ -18,10 +18,10 @@ fun stringCombinations(text: String, minSize: Int, maxSize: Int = -1): List<Stri
     val min = if (minSize > 0) minSize else 1
     val max: Int = if (maxSize>min && maxSize<=text.length) maxSize else text.length
     val results = ArrayList<String>()
-    for (i in 0..text.length - 1) {
+    for (i in 0 until text.length) {
         // Record size as the list will change
         val resultsLength = results.size
-        for (j in 0..resultsLength - 1) {
+        for (j in 0 until resultsLength) {
             results.add(text[i] + results[j])
         }
         results.add(Character.toString(text[i]))

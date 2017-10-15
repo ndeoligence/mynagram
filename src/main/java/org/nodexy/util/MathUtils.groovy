@@ -15,7 +15,7 @@ class MathUtils {
      * @return a list containing all the possible permutations of the given elements.
      */
     static List<Object[]> permute(Object[] elements) {
-        if (elements == null || elements.size < 2) return [elements]
+        if (elements == null || elements.length < 2) return [elements]
 
         def list = []
         if (elements.size() == 2) {
